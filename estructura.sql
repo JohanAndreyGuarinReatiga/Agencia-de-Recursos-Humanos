@@ -11,14 +11,3 @@ CREATE TABLE empleados (
     apellido VARCHAR(30),
     correo VARCHAR(50)
 );
-
-
-USE rrhh_agencia;
-
--- Consulta con transformación de datos
-SELECT
-    CONCAT(nombre, ' ', apellido) AS nombre_completo,
-    LENGTH(CONCAT(nombre, ' ', apellido)) AS longitud_nombre,
-    UPPER(nombre) AS nombre_mayusculas,
-    SUBSTRING_INDEX(correo, '@', -1) AS dominio_correo
-FROM empleados;
